@@ -1,0 +1,10 @@
+Options -Multiviews
+
+# Ubah URL
+RewriteEngine On
+# Abaikan jika folder yang ditulis di URL memang ada
+RewriteCond %{REQUEST_FILENAME} !-d
+# Abaikan jika file yang ditulis di URL memang ada
+RewriteCond %{REQUEST_FILENAME} !-f
+# Ambil apapun yang ditulis di URL setelah "public", lalu masukkan ke dalam parameter URL setelah index.php 
+RewriteRule ^(.*)$ index.php?url=$1 [L]
